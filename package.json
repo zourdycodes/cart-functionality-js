@@ -1,0 +1,23 @@
+{
+  "name": "cart-functionality-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zourdycodes/cart-functionality-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zourdycodes/cart-functionality-js/issues"
+  },
+  "homepage": "https://github.com/zourdycodes/cart-functionality-js#readme",
+  "dependencies": {
+    "parcel": "^2.0.0-beta.2"
+  }
+}
