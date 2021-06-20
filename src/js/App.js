@@ -121,8 +121,17 @@ class UI {
         //* Display cart item
         globalThis.addCartItems(cartItemContent);
         //* show the cart
+        globalThis.showCart();
+
+        //* close btn
+        globalThis.closeOverlay();
       });
     });
+  }
+
+  showCart() {
+    cartOverlay.classList.add("transparentBcg");
+    cartDOM.classList.add("showCart");
   }
 
   setCartValues(cart) {
@@ -156,6 +165,13 @@ class UI {
 
     cartContent.appendChild(div);
     console.log(cartContent);
+  }
+
+  closeOverlay() {
+    closeCardBtn.addEventListener("click", function () {
+      cartOverlay.classList.remove("transparentBcg");
+      cartDOM.classList.remove("showCart");
+    });
   }
 }
 
