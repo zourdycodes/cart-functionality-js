@@ -6,30 +6,30 @@
 // anything defined in a previous bundle is accessed via the
 // orig method which is the require for previous bundles
 
-(function(modules, entry, mainEntry, parcelRequireName, globalName) {
+(function (modules, entry, mainEntry, parcelRequireName, globalName) {
   /* eslint-disable no-undef */
   var globalObject =
-    typeof globalThis !== 'undefined'
+    typeof globalThis !== "undefined"
       ? globalThis
-      : typeof self !== 'undefined'
+      : typeof self !== "undefined"
       ? self
-      : typeof window !== 'undefined'
+      : typeof window !== "undefined"
       ? window
-      : typeof global !== 'undefined'
+      : typeof global !== "undefined"
       ? global
       : {};
   /* eslint-enable no-undef */
 
   // Save the require from previous bundle to this closure if any
   var previousRequire =
-    typeof globalObject[parcelRequireName] === 'function' &&
+    typeof globalObject[parcelRequireName] === "function" &&
     globalObject[parcelRequireName];
 
   var cache = previousRequire.cache || {};
   // Do not use `require` to prevent Webpack from trying to bundle this call
   var nodeRequire =
-    typeof module !== 'undefined' &&
-    typeof module.require === 'function' &&
+    typeof module !== "undefined" &&
+    typeof module.require === "function" &&
     module.require.bind(module);
 
   function newRequire(name, jumped) {
@@ -39,7 +39,7 @@
         // cache jump to the current global require ie. the last bundle
         // that was added to the page.
         var currentRequire =
-          typeof globalObject[parcelRequireName] === 'function' &&
+          typeof globalObject[parcelRequireName] === "function" &&
           globalObject[parcelRequireName];
         if (!jumped && currentRequire) {
           return currentRequire(name, true);
@@ -54,12 +54,12 @@
         }
 
         // Try the node require function if it exists.
-        if (nodeRequire && typeof name === 'string') {
+        if (nodeRequire && typeof name === "string") {
           return nodeRequire(name);
         }
 
         var err = new Error("Cannot find module '" + name + "'");
-        err.code = 'MODULE_NOT_FOUND';
+        err.code = "MODULE_NOT_FOUND";
         throw err;
       }
 
@@ -99,17 +99,17 @@
   newRequire.modules = modules;
   newRequire.cache = cache;
   newRequire.parent = previousRequire;
-  newRequire.register = function(id, exports) {
+  newRequire.register = function (id, exports) {
     modules[id] = [
-      function(require, module) {
+      function (require, module) {
         module.exports = exports;
       },
       {},
     ];
   };
 
-  Object.defineProperty(newRequire, 'root', {
-    get: function() {
+  Object.defineProperty(newRequire, "root", {
+    get: function () {
       return globalObject[parcelRequireName];
     },
   });
@@ -126,12 +126,12 @@
     var mainExports = newRequire(mainEntry);
 
     // CommonJS
-    if (typeof exports === 'object' && typeof module !== 'undefined') {
+    if (typeof exports === "object" && typeof module !== "undefined") {
       module.exports = mainExports;
 
       // RequireJS
-    } else if (typeof define === 'function' && define.amd) {
-      define(function() {
+    } else if (typeof define === "function" && define.amd) {
+      define(function () {
         return mainExports;
       });
 
@@ -140,15 +140,18 @@
       this[globalName] = mainExports;
     }
   }
-})({"7ifkw":[function(require,module,exports) {
-var HMR_HOST = null;
-var HMR_PORT = 1234;
-var HMR_SECURE = false;
-var HMR_ENV_HASH = "d751713988987e9331980363e24189ce";
-module.bundle.HMR_BUNDLE_ID = "783891dc43e17ba9cba3bdc4f09d64a1";
-// @flow
-/*global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE*/
-/*::
+})(
+  {
+    "7ifkw": [
+      function (require, module, exports) {
+        var HMR_HOST = null;
+        var HMR_PORT = 1234;
+        var HMR_SECURE = false;
+        var HMR_ENV_HASH = "d751713988987e9331980363e24189ce";
+        module.bundle.HMR_BUNDLE_ID = "783891dc43e17ba9cba3bdc4f09d64a1";
+        // @flow
+        /*global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE*/
+        /*::
 import type {
 HMRAsset,
 HMRMessage,
@@ -181,116 +184,150 @@ declare var HMR_PORT: string;
 declare var HMR_ENV_HASH: string;
 declare var HMR_SECURE: boolean;
 */
-var OVERLAY_ID = '__parcel__error__overlay__';
-var OldModule = module.bundle.Module;
-function Module(moduleName) {
-  OldModule.call(this, moduleName);
-  this.hot = {
-    data: module.bundle.hotData,
-    _acceptCallbacks: [],
-    _disposeCallbacks: [],
-    accept: function (fn) {
-      this._acceptCallbacks.push(fn || (function () {}));
-    },
-    dispose: function (fn) {
-      this._disposeCallbacks.push(fn);
-    }
-  };
-  module.bundle.hotData = undefined;
-}
-module.bundle.Module = Module;
-var checkedAssets, /*: {|[string]: boolean|}*/
-acceptedAssets, /*: {|[string]: boolean|}*/
-/*: {|[string]: boolean|}*/
-assetsToAccept;
-function getHostname() {
-  return HMR_HOST || (location.protocol.indexOf('http') === 0 ? location.hostname : 'localhost');
-}
-function getPort() {
-  return HMR_PORT || location.port;
-}
-// eslint-disable-next-line no-redeclare
-var parent = module.bundle.parent;
-if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
-  var hostname = getHostname();
-  var port = getPort();
-  var protocol = HMR_SECURE || location.protocol == 'https:' && !(/localhost|127.0.0.1|0.0.0.0/).test(hostname) ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + (port ? ':' + port : '') + '/');
-  // $FlowFixMe
-  ws.onmessage = function (event) /*: {data: string, ...}*/
-  {
-    checkedAssets = {
-      /*: {|[string]: boolean|}*/
-    };
-    acceptedAssets = {
-      /*: {|[string]: boolean|}*/
-    };
-    assetsToAccept = [];
-    var data = /*: HMRMessage*/
-    JSON.parse(event.data);
-    if (data.type === 'update') {
-      // Remove error overlay if there is one
-      removeErrorOverlay();
-      let assets = data.assets.filter(asset => asset.envHash === HMR_ENV_HASH);
-      // Handle HMR Update
-      var handled = false;
-      assets.forEach(asset => {
-        var didAccept = asset.type === 'css' || asset.type === 'js' && hmrAcceptCheck(module.bundle.root, asset.id, asset.depsByBundle);
-        if (didAccept) {
-          handled = true;
+        var OVERLAY_ID = "__parcel__error__overlay__";
+        var OldModule = module.bundle.Module;
+        function Module(moduleName) {
+          OldModule.call(this, moduleName);
+          this.hot = {
+            data: module.bundle.hotData,
+            _acceptCallbacks: [],
+            _disposeCallbacks: [],
+            accept: function (fn) {
+              this._acceptCallbacks.push(fn || function () {});
+            },
+            dispose: function (fn) {
+              this._disposeCallbacks.push(fn);
+            },
+          };
+          module.bundle.hotData = undefined;
         }
-      });
-      if (handled) {
-        console.clear();
-        assets.forEach(function (asset) {
-          hmrApply(module.bundle.root, asset);
-        });
-        for (var i = 0; i < assetsToAccept.length; i++) {
-          var id = assetsToAccept[i][1];
-          if (!acceptedAssets[id]) {
-            hmrAcceptRun(assetsToAccept[i][0], id);
+        module.bundle.Module = Module;
+        var checkedAssets /*: {|[string]: boolean|}*/,
+          acceptedAssets /*: {|[string]: boolean|}*/,
+          /*: {|[string]: boolean|}*/
+          assetsToAccept;
+        function getHostname() {
+          return (
+            HMR_HOST ||
+            (location.protocol.indexOf("http") === 0
+              ? location.hostname
+              : "localhost")
+          );
+        }
+        function getPort() {
+          return HMR_PORT || location.port;
+        }
+        // eslint-disable-next-line no-redeclare
+        var parent = module.bundle.parent;
+        if (
+          (!parent || !parent.isParcelRequire) &&
+          typeof WebSocket !== "undefined"
+        ) {
+          var hostname = getHostname();
+          var port = getPort();
+          var protocol =
+            HMR_SECURE ||
+            (location.protocol == "https:" &&
+              !/localhost|127.0.0.1|0.0.0.0/.test(hostname))
+              ? "wss"
+              : "ws";
+          var ws = new WebSocket(
+            protocol + "://" + hostname + (port ? ":" + port : "") + "/"
+          );
+          // $FlowFixMe
+          ws.onmessage = function (event /*: {data: string, ...}*/) {
+            checkedAssets = {
+              /*: {|[string]: boolean|}*/
+            };
+            acceptedAssets = {
+              /*: {|[string]: boolean|}*/
+            };
+            assetsToAccept = [];
+            var data = /*: HMRMessage*/ JSON.parse(event.data);
+            if (data.type === "update") {
+              // Remove error overlay if there is one
+              removeErrorOverlay();
+              let assets = data.assets.filter(
+                (asset) => asset.envHash === HMR_ENV_HASH
+              );
+              // Handle HMR Update
+              var handled = false;
+              assets.forEach((asset) => {
+                var didAccept =
+                  asset.type === "css" ||
+                  (asset.type === "js" &&
+                    hmrAcceptCheck(
+                      module.bundle.root,
+                      asset.id,
+                      asset.depsByBundle
+                    ));
+                if (didAccept) {
+                  handled = true;
+                }
+              });
+              if (handled) {
+                console.clear();
+                assets.forEach(function (asset) {
+                  hmrApply(module.bundle.root, asset);
+                });
+                for (var i = 0; i < assetsToAccept.length; i++) {
+                  var id = assetsToAccept[i][1];
+                  if (!acceptedAssets[id]) {
+                    hmrAcceptRun(assetsToAccept[i][0], id);
+                  }
+                }
+              } else {
+                window.location.reload();
+              }
+            }
+            if (data.type === "error") {
+              // Log parcel errors to console
+              for (let ansiDiagnostic of data.diagnostics.ansi) {
+                let stack = ansiDiagnostic.codeframe
+                  ? ansiDiagnostic.codeframe
+                  : ansiDiagnostic.stack;
+                console.error(
+                  "🚨 [parcel]: " +
+                    ansiDiagnostic.message +
+                    "\n" +
+                    stack +
+                    "\n\n" +
+                    ansiDiagnostic.hints.join("\n")
+                );
+              }
+              // Render the fancy html overlay
+              removeErrorOverlay();
+              var overlay = createErrorOverlay(data.diagnostics.html);
+              // $FlowFixMe
+              document.body.appendChild(overlay);
+            }
+          };
+          ws.onerror = function (e) {
+            console.error(e.message);
+          };
+          ws.onclose = function (e) {
+            if (undefined !== "test") {
+              console.warn("[parcel] 🚨 Connection to the HMR server was lost");
+            }
+          };
+        }
+        function removeErrorOverlay() {
+          var overlay = document.getElementById(OVERLAY_ID);
+          if (overlay) {
+            overlay.remove();
+            console.log("[parcel] ✨ Error resolved");
           }
         }
-      } else {
-        window.location.reload();
-      }
-    }
-    if (data.type === 'error') {
-      // Log parcel errors to console
-      for (let ansiDiagnostic of data.diagnostics.ansi) {
-        let stack = ansiDiagnostic.codeframe ? ansiDiagnostic.codeframe : ansiDiagnostic.stack;
-        console.error('🚨 [parcel]: ' + ansiDiagnostic.message + '\n' + stack + '\n\n' + ansiDiagnostic.hints.join('\n'));
-      }
-      // Render the fancy html overlay
-      removeErrorOverlay();
-      var overlay = createErrorOverlay(data.diagnostics.html);
-      // $FlowFixMe
-      document.body.appendChild(overlay);
-    }
-  };
-  ws.onerror = function (e) {
-    console.error(e.message);
-  };
-  ws.onclose = function (e) {
-    if (undefined !== 'test') {
-      console.warn('[parcel] 🚨 Connection to the HMR server was lost');
-    }
-  };
-}
-function removeErrorOverlay() {
-  var overlay = document.getElementById(OVERLAY_ID);
-  if (overlay) {
-    overlay.remove();
-    console.log('[parcel] ✨ Error resolved');
-  }
-}
-function createErrorOverlay(diagnostics) {
-  var overlay = document.createElement('div');
-  overlay.id = OVERLAY_ID;
-  let errorHTML = '<div style="background: black; opacity: 0.85; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; font-family: Menlo, Consolas, monospace; z-index: 9999;">';
-  for (let diagnostic of diagnostics) {
-    let stack = diagnostic.codeframe ? diagnostic.codeframe : diagnostic.stack;
-    errorHTML += `
+        function createErrorOverlay(diagnostics) {
+          var overlay = document.createElement("div");
+          overlay.id = OVERLAY_ID;
+          let errorHTML =
+            '<div style="background: black; opacity: 0.85; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; font-family: Menlo, Consolas, monospace; z-index: 9999;">';
+          for (let diagnostic of diagnostics) {
+            let stack = diagnostic.codeframe
+              ? diagnostic.codeframe
+              : diagnostic.stack;
+            errorHTML += `
       <div>
         <div style="font-size: 18px; font-weight: bold; margin-top: 20px;">
           🚨 ${diagnostic.message}
@@ -299,210 +336,226 @@ function createErrorOverlay(diagnostics) {
           ${stack}
         </pre>
         <div>
-          ${diagnostic.hints.map(hint => '<div>' + hint + '</div>').join('')}
+          ${diagnostic.hints.map((hint) => "<div>" + hint + "</div>").join("")}
         </div>
       </div>
     `;
-  }
-  errorHTML += '</div>';
-  overlay.innerHTML = errorHTML;
-  return overlay;
-}
-function getParents(bundle, id) /*: Array<[ParcelRequire, string]>*/
-{
-  var modules = bundle.modules;
-  if (!modules) {
-    return [];
-  }
-  var parents = [];
-  var k, d, dep;
-  for (k in modules) {
-    for (d in modules[k][1]) {
-      dep = modules[k][1][d];
-      if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
-        parents.push([bundle, k]);
-      }
-    }
-  }
-  if (bundle.parent) {
-    parents = parents.concat(getParents(bundle.parent, id));
-  }
-  return parents;
-}
-function updateLink(link) {
-  var newLink = link.cloneNode();
-  newLink.onload = function () {
-    if (link.parentNode !== null) {
-      // $FlowFixMe
-      link.parentNode.removeChild(link);
-    }
-  };
-  newLink.setAttribute('href', // $FlowFixMe
-  link.getAttribute('href').split('?')[0] + '?' + Date.now());
-  // $FlowFixMe
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-var cssTimeout = null;
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-    for (var i = 0; i < links.length; i++) {
-      // $FlowFixMe[incompatible-type]
-      var href = /*: string*/
-      links[i].getAttribute('href');
-      var hostname = getHostname();
-      var servedFromHMRServer = hostname === 'localhost' ? new RegExp('^(https?:\\/\\/(0.0.0.0|127.0.0.1)|localhost):' + getPort()).test(href) : href.indexOf(hostname + ':' + getPort());
-      var absolute = (/^https?:\/\//i).test(href) && href.indexOf(window.location.origin) !== 0 && !servedFromHMRServer;
-      if (!absolute) {
-        updateLink(links[i]);
-      }
-    }
-    cssTimeout = null;
-  }, 50);
-}
-function hmrApply(bundle, /*: ParcelRequire*/
-asset) /*:  HMRAsset*/
-{
-  var modules = bundle.modules;
-  if (!modules) {
-    return;
-  }
-  if (asset.type === 'css') {
-    reloadCSS();
-    return;
-  }
-  let deps = asset.depsByBundle[bundle.HMR_BUNDLE_ID];
-  if (deps) {
-    var fn = new Function('require', 'module', 'exports', asset.output);
-    modules[asset.id] = [fn, deps];
-  } else if (bundle.parent) {
-    hmrApply(bundle.parent, asset);
-  }
-}
-function hmrAcceptCheck(bundle, /*: ParcelRequire*/
-id, /*: ParcelRequire*/
-/*: string*/
-depsByBundle) /*: ?{ [string]: { [string]: string } }*/
-{
-  var modules = bundle.modules;
-  if (!modules) {
-    return;
-  }
-  if (depsByBundle && !depsByBundle[bundle.HMR_BUNDLE_ID]) {
-    // If we reached the root bundle without finding where the asset should go,
-    // there's nothing to do. Mark as "accepted" so we don't reload the page.
-    if (!bundle.parent) {
-      return true;
-    }
-    return hmrAcceptCheck(bundle.parent, id, depsByBundle);
-  }
-  if (checkedAssets[id]) {
-    return;
-  }
-  checkedAssets[id] = true;
-  var cached = bundle.cache[id];
-  assetsToAccept.push([bundle, id]);
-  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
-    return true;
-  }
-  return getParents(module.bundle.root, id).some(function (v) {
-    return hmrAcceptCheck(v[0], v[1], null);
-  });
-}
-function hmrAcceptRun(bundle, /*: ParcelRequire*/
-id) /*: string*/
-{
-  var cached = bundle.cache[id];
-  bundle.hotData = {};
-  if (cached && cached.hot) {
-    cached.hot.data = bundle.hotData;
-  }
-  if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
-    cached.hot._disposeCallbacks.forEach(function (cb) {
-      cb(bundle.hotData);
-    });
-  }
-  delete bundle.cache[id];
-  bundle(id);
-  cached = bundle.cache[id];
-  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
-    cached.hot._acceptCallbacks.forEach(function (cb) {
-      var assetsToAlsoAccept = cb(function () {
-        return getParents(module.bundle.root, id);
-      });
-      if (assetsToAlsoAccept && assetsToAccept.length) {
-        assetsToAccept.push.apply(assetsToAccept, assetsToAlsoAccept);
-      }
-    });
-  }
-  acceptedAssets[id] = true;
-}
+          }
+          errorHTML += "</div>";
+          overlay.innerHTML = errorHTML;
+          return overlay;
+        }
+        function getParents(bundle, id) {
+          /*: Array<[ParcelRequire, string]>*/
+          var modules = bundle.modules;
+          if (!modules) {
+            return [];
+          }
+          var parents = [];
+          var k, d, dep;
+          for (k in modules) {
+            for (d in modules[k][1]) {
+              dep = modules[k][1][d];
+              if (
+                dep === id ||
+                (Array.isArray(dep) && dep[dep.length - 1] === id)
+              ) {
+                parents.push([bundle, k]);
+              }
+            }
+          }
+          if (bundle.parent) {
+            parents = parents.concat(getParents(bundle.parent, id));
+          }
+          return parents;
+        }
+        function updateLink(link) {
+          var newLink = link.cloneNode();
+          newLink.onload = function () {
+            if (link.parentNode !== null) {
+              // $FlowFixMe
+              link.parentNode.removeChild(link);
+            }
+          };
+          newLink.setAttribute(
+            "href", // $FlowFixMe
+            link.getAttribute("href").split("?")[0] + "?" + Date.now()
+          );
+          // $FlowFixMe
+          link.parentNode.insertBefore(newLink, link.nextSibling);
+        }
+        var cssTimeout = null;
+        function reloadCSS() {
+          if (cssTimeout) {
+            return;
+          }
+          cssTimeout = setTimeout(function () {
+            var links = document.querySelectorAll('link[rel="stylesheet"]');
+            for (var i = 0; i < links.length; i++) {
+              // $FlowFixMe[incompatible-type]
+              var href = /*: string*/ links[i].getAttribute("href");
+              var hostname = getHostname();
+              var servedFromHMRServer =
+                hostname === "localhost"
+                  ? new RegExp(
+                      "^(https?:\\/\\/(0.0.0.0|127.0.0.1)|localhost):" +
+                        getPort()
+                    ).test(href)
+                  : href.indexOf(hostname + ":" + getPort());
+              var absolute =
+                /^https?:\/\//i.test(href) &&
+                href.indexOf(window.location.origin) !== 0 &&
+                !servedFromHMRServer;
+              if (!absolute) {
+                updateLink(links[i]);
+              }
+            }
+            cssTimeout = null;
+          }, 50);
+        }
+        function hmrApply(bundle /*: ParcelRequire*/, asset) {
+          /*:  HMRAsset*/
+          var modules = bundle.modules;
+          if (!modules) {
+            return;
+          }
+          if (asset.type === "css") {
+            reloadCSS();
+            return;
+          }
+          let deps = asset.depsByBundle[bundle.HMR_BUNDLE_ID];
+          if (deps) {
+            var fn = new Function("require", "module", "exports", asset.output);
+            modules[asset.id] = [fn, deps];
+          } else if (bundle.parent) {
+            hmrApply(bundle.parent, asset);
+          }
+        }
+        function hmrAcceptCheck(
+          bundle /*: ParcelRequire*/,
+          id /*: ParcelRequire*/,
+          /*: string*/
+          depsByBundle
+        ) {
+          /*: ?{ [string]: { [string]: string } }*/
+          var modules = bundle.modules;
+          if (!modules) {
+            return;
+          }
+          if (depsByBundle && !depsByBundle[bundle.HMR_BUNDLE_ID]) {
+            // If we reached the root bundle without finding where the asset should go,
+            // there's nothing to do. Mark as "accepted" so we don't reload the page.
+            if (!bundle.parent) {
+              return true;
+            }
+            return hmrAcceptCheck(bundle.parent, id, depsByBundle);
+          }
+          if (checkedAssets[id]) {
+            return;
+          }
+          checkedAssets[id] = true;
+          var cached = bundle.cache[id];
+          assetsToAccept.push([bundle, id]);
+          if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+            return true;
+          }
+          return getParents(module.bundle.root, id).some(function (v) {
+            return hmrAcceptCheck(v[0], v[1], null);
+          });
+        }
+        function hmrAcceptRun(bundle /*: ParcelRequire*/, id) {
+          /*: string*/
+          var cached = bundle.cache[id];
+          bundle.hotData = {};
+          if (cached && cached.hot) {
+            cached.hot.data = bundle.hotData;
+          }
+          if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
+            cached.hot._disposeCallbacks.forEach(function (cb) {
+              cb(bundle.hotData);
+            });
+          }
+          delete bundle.cache[id];
+          bundle(id);
+          cached = bundle.cache[id];
+          if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+            cached.hot._acceptCallbacks.forEach(function (cb) {
+              var assetsToAlsoAccept = cb(function () {
+                return getParents(module.bundle.root, id);
+              });
+              if (assetsToAlsoAccept && assetsToAccept.length) {
+                assetsToAccept.push.apply(assetsToAccept, assetsToAlsoAccept);
+              }
+            });
+          }
+          acceptedAssets[id] = true;
+        }
+      },
+      {},
+    ],
+    "1Ucmn": [
+      function (require, module, exports) {
+        "use-strict";
 
-},{}],"1Ucmn":[function(require,module,exports) {
-"use-strict";
+        //* GLOBAL DOM SELECTOR
+        const cartBtn = document.querySelector(".cart-btn");
+        const closeCardBtn = document.querySelector(".close-cart");
+        const clearCardBtn = document.querySelector(".clear-cart");
+        const cartDOM = document.querySelector(".cart");
+        const cartOverlay = document.querySelector(".cart-overlay");
+        const cartItems = document.querySelector(".cart-items");
+        const cartTotal = document.querySelector(".cart-total");
+        const cartContent = document.querySelector(".cart-content");
+        const productsDOM = document.querySelector(".products-center");
+        let cart = [];
+        let buttonsDOM = [];
 
-//* GLOBAL DOM SELECTOR
-const cartBtn = document.querySelector(".cart-btn");
-const closeCardBtn = document.querySelector(".close-cart");
-const clearCardBtn = document.querySelector(".clear-cart");
-const cartDOM = document.querySelector(".cart");
-const cartOverlay = document.querySelector(".cart-overlay");
-const cartItems = document.querySelector(".cart-items");
-const cartTotal = document.querySelector(".cart-total");
-const cartContent = document.querySelector(".cart-content");
-const productsDOM = document.querySelector(".products-center");
-let cart = [];
-let buttonsDOM = [];
+        //warn ==> getting the products
+        class Products {
+          async getProducts() {
+            try {
+              const res = await fetch("../../products.json");
+              const data = await res.json();
 
-//warn ==> getting the products
-class Products {
-  async getProducts() {
-    try {
-      const res = await fetch("../../products.json");
-      const data = await res.json();
+              if (!res.ok)
+                throw new Error(
+                  "Fetching Process Failed 404 ==> your connection is down"
+                );
 
-      if (!res.ok)
-        throw new Error(
-          "Fetching Process Failed 404 ==> your connection is down"
-        );
+              let items = data.items;
 
-      let items = data.items;
+              items = items.map((item) => {
+                //warn => destructuring
+                const {
+                  fields: {
+                    image: {
+                      fields: {
+                        file: { url },
+                      },
+                    },
+                    price,
+                    title,
+                  },
+                  sys: { id },
+                } = item;
 
-      items = items.map((item) => {
-        //warn => destructuring
-        const {
-          fields: {
-            image: {
-              fields: {
-                file: { url },
-              },
-            },
-            price,
-            title,
-          },
-          sys: { id },
-        } = item;
+                return { url, price, title, id };
+              });
 
-        return { url, price, title, id };
-      });
+              return items;
+            } catch (error) {
+              console.error(`wait up bruh!, ${error.message}`);
+            }
+          }
+        }
 
-      return items;
-    } catch (error) {
-      console.error(`wait up bruh!, ${error.message}`);
-    }
-  }
-}
+        //warn ==> display the products
+        class UI {
+          displayProducts(products) {
+            let result = "";
 
-//warn ==> display the products
-class UI {
-  displayProducts(products) {
-    let result = "";
-
-    products.forEach((product) => {
-      result += `
+            products.forEach((product) => {
+              result += `
   <article class="product">
       <div class="img-container">
         <img
@@ -519,105 +572,105 @@ class UI {
     <h4>$${product.price}</h4>
   </article>
       `;
-    });
+            });
 
-    productsDOM.innerHTML = result;
+            productsDOM.innerHTML = result;
 
-    console.log(products);
-  }
+            console.log(products);
+          }
 
-  getBagButtons() {
-    //warn ==> get rid of NodeList turn into Array
-    const buttons = [...document.querySelectorAll(".bag-btn")];
+          getBagButtons() {
+            //warn ==> get rid of NodeList turn into Array
+            const buttons = [...document.querySelectorAll(".bag-btn")];
 
-    //* fix collide instantiate to the Object
-    let globalThis = this;
+            //* fix collide instantiate to the Object
+            let globalThis = this;
 
-    buttonsDOM = buttons;
+            buttonsDOM = buttons;
 
-    buttons.forEach((button) => {
-      let id = button.dataset.id;
-      console.log(id);
+            buttons.forEach((button) => {
+              let id = button.dataset.id;
+              console.log(id);
 
-      // checking the button already store in cart
-      const inCart = cart.find((item) => item.id === id);
+              // checking the button already store in cart
+              const inCart = cart.find((item) => item.id === id);
 
-      if (inCart) {
-        button.innerText = "In Cart";
-        button.disabled = true;
-      }
+              if (inCart) {
+                button.innerText = "In Cart";
+                button.disabled = true;
+              }
 
-      button.addEventListener("click", function (event) {
-        event.target.innerText = "In Cart";
-        event.target.disabled = true;
-        //TODO:
+              button.addEventListener("click", function (event) {
+                event.target.innerText = "In Cart";
+                event.target.disabled = true;
+                //TODO:
 
-        //* Get Product from Products
-        let cartItemContent = { ...Storage.getProduct(id), amount: 1 };
+                //* Get Product from Products
+                let cartItemContent = { ...Storage.getProduct(id), amount: 1 };
 
-        //* add product to the cart
-        cart = [...cart, cartItemContent];
+                //* add product to the cart
+                cart = [...cart, cartItemContent];
 
-        //* save cart in local storage
-        Storage.saveProduct(cart);
-        //* set cart values
-        globalThis.setCartValues(cart);
-        //* Display cart item
-        globalThis.addCartItems(cartItemContent);
-        //* show the cart
-        globalThis.showCart();
-      });
-    });
-  }
+                //* save cart in local storage
+                Storage.saveProduct(cart);
+                //* set cart values
+                globalThis.setCartValues(cart);
+                //* Display cart item
+                globalThis.addCartItems(cartItemContent);
+                //* show the cart
+                globalThis.showCart();
+              });
+            });
+          }
 
-  showCart() {
-    cartOverlay.classList.add("transparentBcg");
-    cartDOM.classList.add("showCart");
-  }
+          showCart() {
+            cartOverlay.classList.add("transparentBcg");
+            cartDOM.classList.add("showCart");
+          }
 
-  cartButton() {
-    cartBtn.addEventListener("click", this.showCart);
-  }
+          cartButton() {
+            cartBtn.addEventListener("click", this.showCart);
+          }
 
-  // cartShowBtn() {
-  //   cartBtn.addEventListener("click", this.showCart());
-  // }
+          // cartShowBtn() {
+          //   cartBtn.addEventListener("click", this.showCart());
+          // }
 
-  setAPP() {
-    cart = Storage.getCart();
-    this.setCartValues(cart);
-    this.populate(cart);
+          setAPP() {
+            cart = Storage.getCart();
+            this.setCartValues(cart);
+            this.populate(cart);
 
-    this.cartButton();
-    closeCardBtn.addEventListener("click", this.closeOverlay);
-  }
+            this.cartButton();
+            closeCardBtn.addEventListener("click", this.closeOverlay);
+          }
 
-  populate(cart) {
-    cart.forEach((item) => this.addCartItems(item));
-  }
+          populate(cart) {
+            cart.forEach((item) => this.addCartItems(item));
+          }
 
-  /**
-   * @param  {} cart
-   * @param  {} {lettempTotal=0;letitemsTotal=0;cart.map((item
-   * @param  {} {tempTotal+=item.price*item.amount;itemsTotal+=item.amount;}
-   * @param  {} ;cartTotal.innerText=+tempTotal.toFixed(2
-   */
-  setCartValues(cart) {
-    let tempTotal = 0;
-    let itemsTotal = 0;
-    cart.map((item) => {
-      tempTotal += item.price * item.amount; // increase the price values
-      itemsTotal += item.amount;
-    });
+          /**
+           * @param  {} cart
+           * @param  {} {lettempTotal=0;letitemsTotal=0;cart.map((item
+           * @param  {} {tempTotal+=item.price*item.amount;itemsTotal+=item.amount;}
+           * @param  {} ;cartTotal.innerText=+tempTotal.toFixed(2
+           */
+          setCartValues(cart) {
+            let tempTotal = 0;
+            let itemsTotal = 0;
+            cart.map((item) => {
+              tempTotal += item.price * item.amount; // increase the price values
+              itemsTotal += item.amount;
+            });
 
-    cartTotal.innerText = +tempTotal.toFixed(2);
-    cartItems.innerText = itemsTotal;
-  }
+            cartTotal.innerText = +tempTotal.toFixed(2);
+            cartItems.innerText = itemsTotal;
+          }
 
-  addCartItems(item) {
-    const div = document.createElement("div");
-    div.classList.add("cart-item");
-    div.innerHTML = `
+          addCartItems(item) {
+            const div = document.createElement("div");
+            div.classList.add("cart-item");
+            div.innerHTML = `
     <img src="${item.url}" />
     <div>
       <h4>${item.title}</h4>
@@ -631,138 +684,146 @@ class UI {
     </div>
     `;
 
-    cartContent.appendChild(div);
-    console.log(cartContent);
-  }
+            cartContent.appendChild(div);
+            console.log(cartContent);
+          }
 
-  closeOverlay() {
-    closeCardBtn.addEventListener("click", function () {
-      cartOverlay.classList.remove("transparentBcg");
-      cartDOM.classList.remove("showCart");
-    });
-  }
+          closeOverlay() {
+            closeCardBtn.addEventListener("click", function () {
+              cartOverlay.classList.remove("transparentBcg");
+              cartDOM.classList.remove("showCart");
+            });
+          }
 
-  hideCart() {
-    cartOverlay.classList.remove("transparentBcg");
-    cartDOM.classList.remove("showCart");
-  }
+          hideCart() {
+            cartOverlay.classList.remove("transparentBcg");
+            cartDOM.classList.remove("showCart");
+          }
 
-  cartLogic() {
-    //warn: clear cart
-    clearCardBtn.addEventListener("click", () => {
-      this.clearCart();
-    });
+          cartLogic() {
+            //warn: clear cart
+            clearCardBtn.addEventListener("click", () => {
+              this.clearCart();
+            });
 
-    //warn: cart functionality
-    cartContent.addEventListener("click", (event) => {
-      if (event.target.classList.contains("remove-item")) {
-        let removeItem = event.target;
-        let id = removeItem.dataset.id;
-        cartContent.removeChild(removeItem.parentElement.parentElement);
-        this.removeItem(id);
-      }
+            //warn: cart functionality
+            cartContent.addEventListener("click", (event) => {
+              if (event.target.classList.contains("remove-item")) {
+                let removeItem = event.target;
+                let id = removeItem.dataset.id;
+                cartContent.removeChild(removeItem.parentElement.parentElement);
+                this.removeItem(id);
+              }
 
-      if (event.target.classList.contains("fa-chevron-up")) {
-        let addAmount = event.target;
-        let id = addAmount.dataset.id;
-        //* finding the amount and increase it
-        let tempItem = cart.find((item) => item.id === id);
-        tempItem.amount++;
-        Storage.saveProduct(cart);
-        this.setCartValues(cart);
+              if (event.target.classList.contains("fa-chevron-up")) {
+                let addAmount = event.target;
+                let id = addAmount.dataset.id;
+                //* finding the amount and increase it
+                let tempItem = cart.find((item) => item.id === id);
+                tempItem.amount++;
+                Storage.saveProduct(cart);
+                this.setCartValues(cart);
 
-        // set
-        addAmount.nextElementSibling.innerText = tempItem.amount;
-      }
+                // set
+                addAmount.nextElementSibling.innerText = tempItem.amount;
+              }
 
-      if (event.target.classList.contains("fa-chevron-down")) {
-        let decreaseAmount = event.target;
-        let id = decreaseAmount.dataset.id;
-        let tempItem = cart.find((item) => item.id === id);
-        tempItem.amount--;
-        Storage.saveProduct(cart);
-        this.setCartValues(cart);
+              if (event.target.classList.contains("fa-chevron-down")) {
+                let decreaseAmount = event.target;
+                let id = decreaseAmount.dataset.id;
+                let tempItem = cart.find((item) => item.id === id);
+                tempItem.amount--;
+                Storage.saveProduct(cart);
+                this.setCartValues(cart);
 
-        decreaseAmount.previousElementSibling.innerText = tempItem.amount;
+                decreaseAmount.previousElementSibling.innerText =
+                  tempItem.amount;
 
-        if (tempItem.amount === 0) {
-          cartContent.removeChild(decreaseAmount.parentElement.parentElement);
-          this.removeItem(id);
-          this.hideCart();
+                if (tempItem.amount === 0) {
+                  cartContent.removeChild(
+                    decreaseAmount.parentElement.parentElement
+                  );
+                  this.removeItem(id);
+                }
+              }
+            });
+          }
+
+          clearCart() {
+            let cartItems = cart.map((item) => item.id);
+            cartItems.forEach((id) => this.removeItem(id));
+            while (cartContent.children.length > 0) {
+              cartContent.removeChild(cartContent.children[0]);
+            }
+            console.log(cartContent.children);
+            this.hideCart();
+          }
+
+          removeItem(id) {
+            cart = cart.filter((item) => item.id !== id);
+            this.setCartValues(cart);
+            Storage.saveProduct(cart);
+            let button = this.getSingleButton(id);
+            button.disabled = false;
+            button.innerHTML = `<i class='fas fa-shopping-cart'></i> add to cart`;
+          }
+
+          getSingleButton(id) {
+            return buttonsDOM.find((button) => button.dataset.id === id);
+          }
         }
-      }
-    });
-  }
 
-  clearCart() {
-    let cartItems = cart.map((item) => item.id);
-    cartItems.forEach((id) => this.removeItem(id));
-    while (cartContent.children.length > 0) {
-      cartContent.removeChild(cartContent.children[0]);
-    }
-    console.log(cartContent.children);
-    this.hideCart();
-  }
+        //warn ==> storage
+        class Storage {
+          static saveProducts(products) {
+            localStorage.setItem("products", JSON.stringify(products));
+          }
 
-  removeItem(id) {
-    cart = cart.filter((item) => item.id !== id);
-    this.setCartValues(cart);
-    Storage.saveProduct(cart);
-    let button = this.getSingleButton(id);
-    button.disabled = false;
-    button.innerHTML = `<i class='fas fa-shopping-cart'></i> add to cart`;
-  }
+          static getProduct(id) {
+            let products = JSON.parse(localStorage.getItem("products"));
 
-  getSingleButton(id) {
-    return buttonsDOM.find((button) => button.dataset.id === id);
-  }
-}
+            return products.find((product) => product.id === id);
+          }
 
-//warn ==> storage
-class Storage {
-  static saveProducts(products) {
-    localStorage.setItem("products", JSON.stringify(products));
-  }
+          static saveProduct(cart) {
+            return localStorage.setItem("cart", JSON.stringify(cart));
+          }
 
-  static getProduct(id) {
-    let products = JSON.parse(localStorage.getItem("products"));
+          static getCart() {
+            return localStorage.getItem("cart")
+              ? JSON.parse(localStorage.getItem("cart"))
+              : [];
+          }
+        }
 
-    return products.find((product) => product.id === id);
-  }
+        document.addEventListener("DOMContentLoaded", (e) => {
+          const ui = new UI();
+          const products = new Products();
 
-  static saveProduct(cart) {
-    return localStorage.setItem("cart", JSON.stringify(cart));
-  }
+          //* SETUP APP
+          ui.setAPP();
 
-  static getCart() {
-    return localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
-  }
-}
+          //* display product
+          products
+            .getProducts()
+            .then((products) => {
+              ui.displayProducts(products);
+              //* save ==> localStorage
 
-document.addEventListener("DOMContentLoaded", (e) => {
-  const ui = new UI();
-  const products = new Products();
-
-  //* SETUP APP
-  ui.setAPP();
-
-  //* display product
-  products
-    .getProducts()
-    .then((products) => {
-      ui.displayProducts(products);
-      //* save ==> localStorage
-
-      Storage.saveProducts(products);
-    })
-    .then(() => {
-      ui.getBagButtons();
-      ui.cartLogic();
-    });
-});
-
-},{}]},["7ifkw","1Ucmn"], "1Ucmn", "parcelRequiredbf8")
+              Storage.saveProducts(products);
+            })
+            .then(() => {
+              ui.getBagButtons();
+              ui.cartLogic();
+            });
+        });
+      },
+      {},
+    ],
+  },
+  ["7ifkw", "1Ucmn"],
+  "1Ucmn",
+  "parcelRequiredbf8"
+);
 
 //# sourceMappingURL=index.f09d64a1.js.map
