@@ -7,7 +7,7 @@
     <title>Comfy House</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/index.ba449596.css">
+    <link rel="stylesheet" href="/index.HASH_REF_afa8ad43047d199dbbb2dfceba449596.css">
   </head>
   <body>
     <!-- navbar -->
@@ -16,7 +16,7 @@
         <span class="nav-icon">
           <i class="fas fa-bars"></i>
         </span>
-        <img src="/logo.cb4b0752.svg" alt="store logo">
+        <img src="/logo.HASH_REF_65da9037145a6de26f96a153cb4b0752.svg" alt="store logo">
         <div class="cart-btn">
           <span class="nav-icon">
             <i class="fas fa-cart-plus"></i>
@@ -81,6 +81,6 @@
     <!-- contentful -->
     <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
     <!--  javascript -->
-    <script src="/index.f09d64a1.js"></script>
+    <script src="/index.HASH_REF_783891dc43e17ba9cba3bdc4f09d64a1.js"></script>
   </body>
 </html>

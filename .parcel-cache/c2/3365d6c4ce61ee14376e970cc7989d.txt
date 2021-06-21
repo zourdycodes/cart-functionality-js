@@ -7,12 +7,12 @@
 77/home/zourdythedev/courses/cart-functionality-js/public/images/product-1.jpeg1624079221656578400 0
 62/home/zourdythedev/courses/cart-functionality-js/public/images1624079221656578400 1
 55/home/zourdythedev/courses/cart-functionality-js/public1624079644216578400 1
-76/home/zourdythedev/courses/cart-functionality-js/dist/index.ba449596.css.map1624082609358993000 0
-72/home/zourdythedev/courses/cart-functionality-js/dist/index.ba449596.css1624082609348993000 0
-71/home/zourdythedev/courses/cart-functionality-js/dist/index.f09d64a1.js1624082609348993000 0
-59/home/zourdythedev/courses/cart-functionality-js/.gitignore1624080089456578400 0
-62/home/zourdythedev/courses/cart-functionality-js/src/js/App.js1624082517058993000 0
-61/home/zourdythedev/courses/cart-functionality-js/src/main.css1624082608668993000 0
+76/home/zourdythedev/courses/cart-functionality-js/dist/index.ba449596.css.map1624244451120741000 0
+72/home/zourdythedev/courses/cart-functionality-js/dist/index.ba449596.css1624244451120741000 0
+71/home/zourdythedev/courses/cart-functionality-js/dist/index.f09d64a1.js1624244451110741000 0
+59/home/zourdythedev/courses/cart-functionality-js/.gitignore1624160580218895900 0
+62/home/zourdythedev/courses/cart-functionality-js/src/js/App.js1624243731170741000 0
+61/home/zourdythedev/courses/cart-functionality-js/src/main.css1624085972196947700 0
 52/home/zourdythedev/courses/cart-functionality-js/src1624082511668993000 1
 85/home/zourdythedev/courses/cart-functionality-js/node_modules/core-js/configurator.js1622939351549000000 0
 93/home/zourdythedev/courses/cart-functionality-js/node_modules/core-js/modules/es.math.imul.js1622939351549000000 0
@@ -3147,7 +3147,7 @@
 114/home/zourdythedev/courses/cart-functionality-js/node_modules/jsdom/lib/jsdom/living/generated/HTMLInputElement.js1622380998065000000 0
 99/home/zourdythedev/courses/cart-functionality-js/node_modules/core-js/features/instance/includes.js1622939351549000000 0
 103/home/zourdythedev/courses/cart-functionality-js/node_modules/jsdom/lib/jsdom/living/generated/Event.js1622380998065000000 0
-76/home/zourdythedev/courses/cart-functionality-js/dist/hero-bcg.e16a1def.jpeg1624082609328993000 0
+76/home/zourdythedev/courses/cart-functionality-js/dist/hero-bcg.e16a1def.jpeg1624244450970741000 0
 121/home/zourdythedev/courses/cart-functionality-js/node_modules/jsdom/lib/jsdom/living/generated/PageTransitionEventInit.js1622380998065000000 0
 109/home/zourdythedev/courses/cart-functionality-js/node_modules/jsdom/lib/jsdom/living/generated/HTMLElement.js1622380998065000000 0
 125/home/zourdythedev/courses/cart-functionality-js/node_modules/jsdom/lib/jsdom/living/generated/NavigatorConcurrentHardware.js1622380998065000000 0
@@ -3538,7 +3538,7 @@
 80/home/zourdythedev/courses/cart-functionality-js/node_modules/css-select/LICENSE1621045478506000000 0
 87/home/zourdythedev/courses/cart-functionality-js/node_modules/dotenv/lib/env-options.js1622380991303999000 0
 110/home/zourdythedev/courses/cart-functionality-js/node_modules/css-select/node_modules/domutils/test/fixture.js1621045483898999000 0
-75/home/zourdythedev/courses/cart-functionality-js/dist/index.f09d64a1.js.map1624082609358993000 0
+75/home/zourdythedev/courses/cart-functionality-js/dist/index.f09d64a1.js.map1624244451120741000 0
 149/home/zourdythedev/courses/cart-functionality-js/node_modules/postcss-merge-rules/node_modules/postcss-selector-parser/dist/selectors/constructors.js1621045485561000000 0
 115/home/zourdythedev/courses/cart-functionality-js/node_modules/css-select/node_modules/domutils/test/tests/legacy.js1621045483898999000 0
 99/home/zourdythedev/courses/cart-functionality-js/node_modules/css-select/node_modules/domutils/test1624079800396578400 1
@@ -4236,7 +4236,7 @@
 89/home/zourdythedev/courses/cart-functionality-js/node_modules/resolve/test/precedence/bbb1624079802486578400 1
 102/home/zourdythedev/courses/cart-functionality-js/node_modules/@babel/runtime/helpers/defineProperty.js1623798647473000000 0
 91/home/zourdythedev/courses/cart-functionality-js/node_modules/es-abstract/2020/StringPad.js1622285406233999000 0
-59/home/zourdythedev/courses/cart-functionality-js/index.html1624082558488993000 0
+59/home/zourdythedev/courses/cart-functionality-js/index.html1624111322056947700 0
 87/home/zourdythedev/courses/cart-functionality-js/node_modules/@types/http-proxy/LICENSE1622380995042999000 0
 131/home/zourdythedev/courses/cart-functionality-js/node_modules/postcss-modules-extract-imports/node_modules/ansi-styles/package.json1616566339914999000 0
 106/home/zourdythedev/courses/cart-functionality-js/node_modules/@parcel/transformer-html/src/dependencies.js1622380989997999000 0
@@ -8754,7 +8754,7 @@
 102/home/zourdythedev/courses/cart-functionality-js/node_modules/css-tree/lib/syntax/node/MediaFeature.js1621045478578999000 0
 98/home/zourdythedev/courses/cart-functionality-js/node_modules/resolve/test/precedence/aaa/index.js1616566336513999000 0
 86/home/zourdythedev/courses/cart-functionality-js/node_modules/node-addon-api/README.md1622380994809000000 0
-53/home/zourdythedev/courses/cart-functionality-js/dist1624082609358993000 1
+53/home/zourdythedev/courses/cart-functionality-js/dist1624244451120741000 1
 94/home/zourdythedev/courses/cart-functionality-js/node_modules/resolve/test/module_dir/xmodules1624079798026578400 1
 91/home/zourdythedev/courses/cart-functionality-js/node_modules/es-abstract/2020/GetMethod.js1622285406233999000 0
 77/home/zourdythedev/courses/cart-functionality-js/node_modules/which/README.md1616566338963000000 0
@@ -12441,7 +12441,7 @@
 144/home/zourdythedev/courses/cart-functionality-js/node_modules/@parcel/node-resolver-core/node_modules/braces/node_modules/is-extendable/index.js1616566342877000000 0
 96/home/zourdythedev/courses/cart-functionality-js/node_modules/core-js/internals/object-assign.js1622939351549000000 0
 121/home/zourdythedev/courses/cart-functionality-js/node_modules/@parcel/node-resolver-core/node_modules/braces/package.json1616566336825000000 0
-71/home/zourdythedev/courses/cart-functionality-js/dist/logo.cb4b0752.svg1624082609328993000 0
+71/home/zourdythedev/courses/cart-functionality-js/dist/logo.cb4b0752.svg1624244450980741000 0
 115/home/zourdythedev/courses/cart-functionality-js/node_modules/@parcel/node-resolver-core/node_modules/is-extendable1624079798436578400 1
 83/home/zourdythedev/courses/cart-functionality-js/node_modules/lodash/_mapToArray.js1616566337983000000 0
 128/home/zourdythedev/courses/cart-functionality-js/node_modules/@parcel/node-resolver-core/node_modules/is-extendable/package.json1616566342872999000 0
@@ -14542,7 +14542,7 @@
 88/home/zourdythedev/courses/cart-functionality-js/node_modules/css-tree/lib/syntax/pseudo1624079802406578400 1
 94/home/zourdythedev/courses/cart-functionality-js/node_modules/es-abstract/2016/TimeFromYear.js1622285406233999000 0
 85/home/zourdythedev/courses/cart-functionality-js/node_modules/lodash/_listCacheGet.js1616566337983000000 0
-64/home/zourdythedev/courses/cart-functionality-js/dist/index.html1624082609348993000 0
+64/home/zourdythedev/courses/cart-functionality-js/dist/index.html1624244451110741000 0
 97/home/zourdythedev/courses/cart-functionality-js/node_modules/@nodelib/fs.scandir/out/settings.js1622853982444000000 0
 96/home/zourdythedev/courses/cart-functionality-js/node_modules/request-promise-core/lib/errors.js1616566345858999000 0
 81/home/zourdythedev/courses/cart-functionality-js/node_modules/resolve/test/dotdot1624079802276578400 1
@@ -16826,7 +16826,7 @@
 86/home/zourdythedev/courses/cart-functionality-js/node_modules/caniuse-api/node_modules1624079802856578400 1
 69/home/zourdythedev/courses/cart-functionality-js/node_modules/foreach1624079798876578400 1
 91/home/zourdythedev/courses/cart-functionality-js/node_modules/caniuse-api/node_modules/.bin1624079802856578400 1
-62/home/zourdythedev/courses/cart-functionality-js/products.json1624079221666578400 0
+62/home/zourdythedev/courses/cart-functionality-js/products.json1624088201566947700 0
 93/home/zourdythedev/courses/cart-functionality-js/node_modules/string.prototype.trimstart/test1624079801366578400 1
 86/home/zourdythedev/courses/cart-functionality-js/node_modules/node-forge/lib/random.js1621045474451999000 0
 81/home/zourdythedev/courses/cart-functionality-js/node_modules/caniuse-api/LICENSE1621045485522000000 0

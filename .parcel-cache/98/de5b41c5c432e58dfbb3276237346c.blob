@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Comfy House</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="02e79a816e9a0f2253c36dc9991a3b20" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/index.ba449596.css">
+    <link rel="stylesheet" href="f563563387da8e5b9c25ac54f67be2f6">
   </head>
   <body>
     <!-- navbar -->
@@ -16,7 +16,7 @@
         <span class="nav-icon">
           <i class="fas fa-bars"></i>
         </span>
-        <img src="/logo.cb4b0752.svg" alt="store logo">
+        <img src="c5449dd33decbaedfa2748293ce67f67" alt="store logo">
         <div class="cart-btn">
           <span class="nav-icon">
             <i class="fas fa-cart-plus"></i>
@@ -79,8 +79,8 @@
     </div>
     <!-- end of cart -->
     <!-- contentful -->
-    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+    <script src="d86741b8b3c793a933afc03cc24c9379"></script>
     <!--  javascript -->
-    <script src="/index.f09d64a1.js"></script>
+    <script src="98987114319d163719e25e9fd6310786"></script>
   </body>
 </html>
