@@ -122,9 +122,6 @@ class UI {
         globalThis.addCartItems(cartItemContent);
         //* show the cart
         globalThis.showCart();
-
-        //* close btn
-        globalThis.closeOverlay();
       });
     });
   }
@@ -134,6 +131,33 @@ class UI {
     cartDOM.classList.add("showCart");
   }
 
+  cartButton() {
+    cartBtn.addEventListener("click", this.showCart);
+  }
+
+  // cartShowBtn() {
+  //   cartBtn.addEventListener("click", this.showCart());
+  // }
+
+  setAPP() {
+    cart = Storage.getCart();
+    this.setCartValues(cart);
+    this.populate(cart);
+
+    this.cartButton();
+    closeCardBtn.addEventListener("click", this.closeOverlay);
+  }
+
+  populate(cart) {
+    cart.forEach((item) => this.addCartItems(item));
+  }
+
+  /**
+   * @param  {} cart
+   * @param  {} {lettempTotal=0;letitemsTotal=0;cart.map((item
+   * @param  {} {tempTotal+=item.price*item.amount;itemsTotal+=item.amount;}
+   * @param  {} ;cartTotal.innerText=+tempTotal.toFixed(2
+   */
   setCartValues(cart) {
     let tempTotal = 0;
     let itemsTotal = 0;
@@ -173,6 +197,25 @@ class UI {
       cartDOM.classList.remove("showCart");
     });
   }
+
+  cartLogic() {
+    //warn: clear cart
+    clearCardBtn.addEventListener("click", () => {
+      this.clearCart();
+    });
+
+    //warn: cart functionality
+  }
+
+  clearCart() {
+    let cartItems = cart.map((item) => item.id);
+    cartItems.forEach((id) => this.removeItem(id));
+  }
+
+  removeItem(id) {
+    cart = cart.filter((item) => item.id !== id);
+    this.setCartValues(cart);
+  }
 }
 
 //warn ==> storage
@@ -190,11 +233,20 @@ class Storage {
   static saveProduct(cart) {
     return localStorage.setItem("cart", JSON.stringify(cart));
   }
+
+  static getCart() {
+    return localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
+  }
 }
 
 document.addEventListener("DOMContentLoaded", (e) => {
   const ui = new UI();
   const products = new Products();
+
+  //* SETUP APP
+  ui.setAPP();
 
   //* display product
   products
@@ -207,5 +259,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     })
     .then(() => {
       ui.getBagButtons();
+      ui.cartLogic();
     });
 });
